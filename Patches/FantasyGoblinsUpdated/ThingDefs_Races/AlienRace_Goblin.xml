@@ -6,6 +6,7 @@
       <li Class="CombatExtended.PatchOperationFindMod">
         <modName>Fantasy Goblins Updated</modName>
       </li>
+
       <li Class="PatchOperationAddModExtension">
         <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Fantasy_Goblin"]</xpath>
         <value>
