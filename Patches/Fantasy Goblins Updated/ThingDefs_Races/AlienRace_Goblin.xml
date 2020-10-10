@@ -43,16 +43,8 @@
         </value>
       </li>
 
-    	<li Class="PatchOperationReplace">
-    		<xpath>Defs/AlienRace.ThingDef_AlienRace[@Name="Fantasy_Goblin"]/inspectorTabs/li[.="ITab_Pawn_Gear"]</xpath>
-    		<value>
-    			<li>CombatExtended.ITab_Inventory</li>
-    		</value>
-    	</li>
-
     	<li Class="PatchOperationAdd">
-
-    		<xpath>Defs/AlienRace.ThingDef_AlienRace[@Name="Fantasy_Goblin"]/comps</xpath>
+    		<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Fantasy_Goblin"]/comps</xpath>
     		<value>
     			<li Class="CombatExtended.CompProperties_Inventory" />
     		</value>
