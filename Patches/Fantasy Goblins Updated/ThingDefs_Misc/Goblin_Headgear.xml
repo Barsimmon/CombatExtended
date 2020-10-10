@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="CombatExtended.PatchOperationFindMod">
+        <modName>Fantasy Goblins Updated</modName>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Leather_GoblinHelmet"]/statBases/Mass</xpath>
+        <value>
+          <Mass>1.2</Mass>
+          <Bulk>3</Bulk>
+          <WornBulk>0.5</WornBulk>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Leather_GoblinHelmet"]/statBases/StuffEffectMultiplierArmor</xpath>
+        <value>
+          <StuffEffectMultiplierArmor>7</StuffEffectMultiplierArmor>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Goblin_TribalMask"]/statBases/Mass</xpath>
+        <value>
+          <Mass>0.8</Mass>
+          <Bulk>2</Bulk>
+          <WornBulk>0.5</WornBulk>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Goblin_TribalMask"]/statBases/StuffEffectMultiplierArmor</xpath>
+        <value>
+          <StuffEffectMultiplierArmor>4</StuffEffectMultiplierArmor>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Goblin_Hood"]/statBases/Mass</xpath>
+        <value>
+          <Mass>0.1</Mass>
+          <Bulk>0.5</Bulk>
+          <WornBulk>0.2</WornBulk>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Goblin_Hood"]/statBases/StuffEffectMultiplierArmor</xpath>
+        <value>
+          <StuffEffectMultiplierArmor>2</StuffEffectMultiplierArmor>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Goblin_ShamanHood"]/statBases/Mass</xpath>
+        <value>
+          <Mass>0.1</Mass>
+          <Bulk>0.5</Bulk>
+          <WornBulk>0.2</WornBulk>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Goblin_ShamanHood"]/statBases/StuffEffectMultiplierArmor</xpath>
+        <value>
+          <StuffEffectMultiplierArmor>2</StuffEffectMultiplierArmor>
+        </value>
+      </li>
+
+    </operations>
+  </Operation>
+</Patch>
