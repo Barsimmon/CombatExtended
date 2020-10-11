@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="CombatExtended.PatchOperationFindMod">
+        <modName>Fantasy Goblins Updated</modName>
+      </li>
+
+      <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+        <defName>Goblin_Bow</defName>
+        <statBases>
+          <SightsEfficiency>0.6</SightsEfficiency>
+          <ShotSpread>1</ShotSpread>
+          <SwayFactor>2</SwayFactor>
+          <Bulk>3.00</Bulk>
+          <RangedWeapon_Cooldown>0.9</RangedWeapon_Cooldown>
+        </statBases>
+        <costList>
+          <WoodLog>15</WoodLog>
+        </costList>
+        <Properties>
+          <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+          <hasStandardCommand>true</hasStandardCommand>
+          <defaultProjectile>Projectile_Arrow_Stone</defaultProjectile>
+          <warmupTime>1</warmupTime>
+          <range>30</range>
+          <soundCast>Bow_Small</soundCast>
+        </Properties>
+        <AmmoUser>
+          <ammoSet>AmmoSet_Arrow</ammoSet>
+        </AmmoUser>
+        <FireModes />
+        <weaponTags>
+          <li>CE_Bow</li>
+        </weaponTags>
+        <AllowWithRunAndGun>false</AllowWithRunAndGun>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Goblin_Bow"]/tools</xpath>
+        <value>
+          <tools>
+            <li Class="CombatExtended.ToolCE">
+              	<capacities>
+                	<li>Blunt</li>
+                	<li>Poke</li>
+              	</capacities>
+              	<power>7</power>
+              	<cooldownTime>1.6</cooldownTime>
+   	 	          <armorPenetrationBlunt>0.65</armorPenetrationBlunt>
+            </li>
+          </tools>
+        </value>
+      </li>
+
+			<li Class="PatchOperationAttributeSet">
+				<xpath>Defs/ThingDef[defName="Goblin_Plumbata"]</xpath>
+				<attribute>ParentName</attribute>
+				<value>BaseWeapon</value>
+			</li>
+
+      <li Class="PatchOperationAttributeSet">
+				<xpath>Defs/ThingDef[defName="Goblin_Plumbata"]</xpath>
+				<attribute>Class</attribute>
+				<value>CombatExtended.AmmoDef</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Goblin_Plumbata"]</xpath>
+				<value>
+					<techLevel>Neolithic</techLevel>
+				</value>
+			</li>
+
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="Goblin_Plumbata"]/costList</xpath>
+			</li>
+
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="Goblin_Plumbata"]/recipeMaker</xpath>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Goblin_Plumbata"]</xpath>
+				<value>
+					<thingCategories>
+						<li>WeaponsRanged</li>
+					</thingCategories>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Goblin_Plumbata"]/statBases</xpath>
+				<value>
+          <statBases>
+            <MarketValue>7.26</MarketValue>
+            <SightsEfficiency>0.35</SightsEfficiency>
+            <ShotSpread>1.5</ShotSpread>
+            <SwayFactor>2.1</SwayFactor>
+            <Bulk>2.5</Bulk>
+            <Mass>1.5</Mass>
+            <RangedWeapon_Cooldown>1.7</RangedWeapon_Cooldown>
+          </statBases>
+					<stackLimit>25</stackLimit>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Goblin_Plumbata"]/weaponTags</xpath>
+				<value>
+          <weaponTags>
+            <li>NeolithicRangedBasicGoblin</li>
+            <li>NeolithicRangedHeavy</li>
+            <li>CE_Pila</li>
+            <li>CE_OneHandedWeapon</li>
+          </weaponTags>
+				</value>
+			</li>
+
+			<!--<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Goblin_Plumbata"]/graphicData/graphicClass</xpath>
+				<value>
+          <graphicClass>Graphic_StackCount</graphicClass>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Goblin_Plumbata"]/graphicData</xpath>
+				<value>
+          <onGroundRandomRotateAngle>0</onGroundRandomRotateAngle>
+				</value>
+			</li>-->
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Goblin_Plumbata"]/verbs</xpath>
+				<value>
+  				<verbs>
+            <li Class="CombatExtended.VerbPropertiesCE">
+              <verbClass>CombatExtended.Verb_ShootCEOneUse</verbClass>
+              <hasStandardCommand>true</hasStandardCommand>
+              <defaultProjectile>Goblin_PlumbataThrow</defaultProjectile>
+              <warmupTime>0.8</warmupTime>
+              <range>7</range>
+              <soundCast>Interact_BeatFire</soundCast>
+            </li>
+  				</verbs>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Goblin_Plumbata"]/tools</xpath>
+				<value>
+						<tools>
+              <li Class="CombatExtended.ToolCE">
+                <label>point</label>
+                <capacities>
+                  <li>Stab</li>
+                </capacities>
+                <power>12</power>
+                <cooldownTime>1.37</cooldownTime>
+                <armorPenetrationBlunt>2.1</armorPenetrationBlunt>
+                <armorPenetrationSharp>0.44</armorPenetrationSharp>
+                <linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+              </li>
+						</tools>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs</xpath>
+				<value>
+
+          <ThingDef Class="CombatExtended.AmmoDef" ParentName="BasePilumProjectile">
+            <defName>Goblin_PlumbataThrow</defName>
+            <label>plumbata (thrown)</label>
+            <projectile Class="CombatExtended.ProjectilePropertiesCE">
+              <damageAmountBase>20</damageAmountBase>
+              <speed>7</speed>
+              <armorPenetrationBlunt>7.44</armorPenetrationBlunt>
+              <armorPenetrationSharp>6</armorPenetrationSharp>
+              <preExplosionSpawnChance>0.75</preExplosionSpawnChance>
+              <preExplosionSpawnThingDef>Goblin_Plumbata</preExplosionSpawnThingDef>
+            </projectile>
+          </ThingDef>
+
+          <RecipeDef ParentName="AmmoRecipeNeolithicBase">
+            <defName>Make_Goblin_Plumbata</defName>
+            <label>make goblin plumbata x5</label>
+            <description>Craft 5 goblin plumbatae.</description>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <recipeUsers>
+              <li>ElectricSmithy</li>
+              <li>FueledSmithy</li>
+              <li>CraftingSpot</li>
+            </recipeUsers>
+            <effectWorking>Smelt</effectWorking>
+            <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+            <workAmount>2000</workAmount>
+            <jobString>Making goblin plumbatae.</jobString>
+            <ingredients>
+              <li>
+                <filter>
+                  <thingDefs>
+                    <li>WoodLog</li>
+                  </thingDefs>
+                </filter>
+                <count>5</count>
+              </li>
+              <li>
+                <filter>
+                  <thingDefs>
+                    <li>Steel</li>
+                  </thingDefs>
+                </filter>
+                <count>15</count>
+              </li>
+            </ingredients>
+            <fixedIngredientFilter>
+              <thingDefs>
+                <li>WoodLog</li>
+                <li>Steel</li>
+              </thingDefs>
+            </fixedIngredientFilter>
+            <products>
+              <Goblin_Plumbata>5</Goblin_Plumbata>
+            </products>
+            <researchPrerequisites>
+              <li>GoblinBasicGear</li>
+            </researchPrerequisites>
+          </RecipeDef>
+
+        </value>
+			</li>
+
+    </operations>
+  </Operation>
+</Patch>
